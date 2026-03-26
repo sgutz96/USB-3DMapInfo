@@ -1,4 +1,4 @@
-        * {
+ * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -22,6 +22,7 @@
         }
 
         #side-panel {
+
             position: absolute;
             top: 16px;
             left: 16px;
@@ -29,11 +30,17 @@
             padding: 16px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+
             width: 400px;
-            max-height: calc(100vh - 32px);
+            background-color: #F5E6D3;
+            padding: 24px;
             overflow-y: auto;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
             display: none;
+            position: absolute;
             z-index: 10;
+
         }
 
         #side-panel.active {
@@ -51,12 +58,13 @@
             background: none;
             border: none;
             transition: color 0.3s;
-            z-index: 1;
         }
 
         .modal-header .close-btn {
-            font-size: 48px;
-            color: #333;
+
+            font-size: 64px;
+            color: #ffffff;
+
         }
 
         .close-btn:hover {
@@ -67,7 +75,6 @@
             font-size: 28px;
             font-weight: bold;
             margin-bottom: 16px;
-            padding-right: 40px;
         }
 
         .call-to-action {
@@ -134,7 +141,6 @@
             z-index: 1000;
             align-items: center;
             justify-content: center;
-            padding: 16px;
         }
 
         #modal.active {
@@ -146,9 +152,8 @@
             border-radius: 8px;
             padding: 32px;
             max-width: 672px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
+            width: 90%;
+            margin: 0 16px;
         }
 
         .modal-header {
@@ -162,7 +167,6 @@
             font-size: 24px;
             font-weight: bold;
             color: #1F2937;
-            padding-right: 40px;
         }
 
         .carousel-container {
@@ -179,11 +183,10 @@
             margin-bottom: 16px;
         }
 
-        .carousel-slide img {
-            max-height: 256px;
-            max-width: 100%;
-            border-radius: 8px;
-            object-fit: cover;
+        .carousel-slide p {
+            font-size: 24px;
+            font-weight: 600;
+            color: #374151;
         }
 
         .carousel-btn {
@@ -218,7 +221,6 @@
             justify-content: center;
             gap: 8px;
             margin-top: 16px;
-            flex-wrap: wrap;
         }
 
         .indicator {
@@ -243,7 +245,6 @@
             padding: 16px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: calc(100vw - 32px);
         }
 
         #instructions.hidden {
@@ -269,203 +270,4 @@
             font-size: 18px;
             color: #8B4513;
             font-weight: bold;
-            text-align: center;
-            padding: 0 20px;
         }
-
-        /* Media Queries para Responsive */
-        
-        /* Tablets y pantallas medianas */
-        @media (max-width: 768px) {
-            #side-panel {
-                width: calc(100vw - 32px);
-                max-width: 500px;
-                left: 16px;
-                right: 16px;
-            }
-
-            .panel-title {
-                font-size: 24px;
-            }
-
-            .modal-content {
-                padding: 24px;
-            }
-
-            .modal-title {
-                font-size: 20px;
-            }
-
-            .carousel-slide {
-                height: 200px;
-            }
-
-            .carousel-slide img {
-                max-height: 200px;
-            }
-
-            .carousel-btn {
-                width: 36px;
-                height: 36px;
-                font-size: 20px;
-            }
-
-            #instructions {
-                max-width: calc(100vw - 32px);
-            }
-        }
-
-        /* Móviles */
-        @media (max-width: 480px) {
-            #side-panel {
-                width: calc(100vw - 16px);
-                left: 8px;
-                right: 8px;
-                top: 8px;
-                padding: 16px;
-                max-height: calc(100vh - 16px);
-            }
-
-            .close-btn {
-                font-size: 28px;
-                top: 12px;
-                right: 12px;
-            }
-
-            .modal-header .close-btn {
-                font-size: 36px;
-            }
-
-            .panel-title {
-                font-size: 20px;
-                margin-bottom: 12px;
-                padding-right: 35px;
-            }
-
-            .call-to-action {
-                font-size: 12px;
-                padding: 6px 12px;
-                margin-bottom: 16px;
-            }
-
-            .panel-text {
-                font-size: 14px;
-                line-height: 1.6;
-                margin-bottom: 16px;
-            }
-
-            .tags-section h3 {
-                font-size: 11px;
-            }
-
-            .tag {
-                font-size: 11px;
-                padding: 4px 10px;
-            }
-
-            .gallery-btn {
-                padding: 10px;
-                font-size: 14px;
-            }
-
-            #modal {
-                padding: 8px;
-            }
-
-            .modal-content {
-                padding: 16px;
-                max-height: 95vh;
-            }
-
-            .modal-title {
-                font-size: 18px;
-                padding-right: 35px;
-            }
-
-            .carousel-slide {
-                height: 180px;
-            }
-
-            .carousel-slide img {
-                max-height: 180px;
-            }
-
-            .carousel-btn {
-                width: 32px;
-                height: 32px;
-                font-size: 18px;
-            }
-
-            .carousel-btn.prev {
-                left: 4px;
-            }
-
-            .carousel-btn.next {
-                right: 4px;
-            }
-
-            .indicator {
-                width: 10px;
-                height: 10px;
-            }
-
-            #instructions {
-                top: 8px;
-                left: 8px;
-                padding: 12px;
-                max-width: calc(100vw - 16px);
-            }
-
-            #instructions h3 {
-                font-size: 14px;
-                margin-bottom: 6px;
-            }
-
-            #instructions p {
-                font-size: 12px;
-            }
-
-            #loading {
-                font-size: 16px;
-                padding: 0 16px;
-            }
-        }
-
-        /* Pantallas muy pequeñas */
-        @media (max-width: 360px) {
-            .panel-title {
-                font-size: 18px;
-            }
-
-            .modal-title {
-                font-size: 16px;
-            }
-
-            .carousel-slide {
-                height: 150px;
-            }
-
-            .carousel-slide img {
-                max-height: 150px;
-            }
-        }
-
-        /* Orientación horizontal en móviles */
-        @media (max-height: 500px) and (orientation: landscape) {
-            #side-panel {
-                max-height: calc(100vh - 16px);
-            }
-
-            .modal-content {
-                max-height: 95vh;
-            }
-
-            .carousel-slide {
-                height: 150px;
-            }
-
-            .carousel-slide img {
-                max-height: 150px;
-            }
-        }
-  
