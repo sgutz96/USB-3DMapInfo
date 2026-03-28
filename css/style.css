@@ -1,0 +1,29 @@
+/* css/style.css – global resets and design tokens */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg:        #B7C5E8;
+  --color-panel-bg:  #F5E6D3;
+  --color-tag-bg:    #8B4513;
+  --color-text:      #374151;
+  --color-text-dark: #1F2937;
+  --color-muted:     #6B7280;
+  --color-indicator: #D2B48C;
+  --color-carousel-bg: #D2B48C;
+  --radius-sm:  8px;
+  --radius-pill: 20px;
+  --shadow-panel: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --font-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+               'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-base);
+  overflow: hidden;
+  background-color: var(--color-bg);
+}

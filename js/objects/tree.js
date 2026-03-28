@@ -1,33 +1,46 @@
 import * as THREE from 'three';
 
-export function createTree(x, z) {
-    const group = new THREE.Group();
+/**
+ * Adds a cute round tree at (x, z) to the scene.
+ * @param {THREE.Scene} scene
+ * @param {number} x
+ * @param {number} z
+ */
+export function addTree(scene, x, z) {
+  // Trunk
+  const trunkGeo = new THREE.CylinderGeometry(0.25, 0.35, 1.8, 6);
+  const trunkMat = new THREE.MeshStandardMaterial({ color: 0x8b5a2b });
+  const trunk = new THREE.Mesh(trunkGeo, trunkMat);
+  trunk.position.set(x, 0.9, z);
+  trunk.castShadow = true;
+  scene.add(trunk);
 
-    const trunk = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.25, 0.35, 1.8, 6),
-        new THREE.MeshStandardMaterial({ color: 0x8B5A2B })
-    );
+  // Three layered crown spheres
+  const crownColors = [0x7fb77e, 0x6fb06d, 0x5daa5a];
+  const sizes       = [1.1, 0.9, 0.7];
+  const heights     = [1.8, 2.4, 2.9];
 
-    trunk.position.y = 0.9;
-    trunk.castShadow = true;
-    group.add(trunk);
+  for (let i = 0; i < 3; i++) {
+    const crownGeo = new THREE.SphereGeometry(sizes[i], 10, 10);
+    const crownMat = new THREE.MeshStandardMaterial({ color: crownColors[i], roughness: 0.8 });
+    const crown = new THREE.Mesh(crownGeo, crownMat);
+    crown.position.set(x, heights[i], z);
+    crown.castShadow = true;
+    scene.add(crown);
+  }
 
-    const colors = [0x7FB77E, 0x6FB06D, 0x5DAA5A];
-    const sizes = [1.1, 0.9, 0.7];
-    const heights = [1.8, 2.4, 2.9];
+  // Texture bumps
+  const bumpGeo = new THREE.SphereGeometry(0.25, 10, 10);
+  const bumpMat = new THREE.MeshStandardMaterial({ color: 0x74c17e });
 
-    for (let i = 0; i < 3; i++) {
-        const crown = new THREE.Mesh(
-            new THREE.SphereGeometry(sizes[i], 10, 10),
-            new THREE.MeshStandardMaterial({ color: colors[i] })
-        );
-
-        crown.position.y = heights[i];
-        crown.castShadow = true;
-
-        group.add(crown);
-    }
-
-    group.position.set(x, 0, z);
-    return group;
+  [
+    [0.5, 2.2, 0.2],
+    [-0.4, 2.6, -0.3],
+    [0.3, 2.0, -0.4],
+  ].forEach(([dx, h, dz]) => {
+    const bump = new THREE.Mesh(bumpGeo, bumpMat);
+    bump.position.set(x + dx, h, z + dz);
+    bump.castShadow = true;
+    scene.add(bump);
+  });
 }

@@ -1,39 +1,35 @@
 import * as THREE from 'three';
 
-export function createFlower1(x, z) {
-    const group = new THREE.Group();
+/**
+ * Adds a cute pink 6-petal flower at (x, z) to the scene.
+ * @param {THREE.Scene} scene
+ * @param {number} x
+ * @param {number} z
+ */
+export function addFlower1(scene, x, z) {
+  // Stem
+  const stemGeo = new THREE.CylinderGeometry(0.05, 0.05, 0.45, 6);
+  const stemMat = new THREE.MeshStandardMaterial({ color: 0x2ecc71 });
+  const stem = new THREE.Mesh(stemGeo, stemMat);
+  stem.position.set(x, 0.225, z);
+  scene.add(stem);
 
-    const stem = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.05, 0.05, 0.45),
-        new THREE.MeshStandardMaterial({ color: 0x2ECC71 })
-    );
-    stem.position.y = 0.225;
-    group.add(stem);
+  // Center
+  const centerGeo = new THREE.SphereGeometry(0.12, 10, 10);
+  const centerMat = new THREE.MeshStandardMaterial({ color: 0xf7dc6f });
+  const center = new THREE.Mesh(centerGeo, centerMat);
+  center.position.set(x, 0.45, z);
+  scene.add(center);
 
-    const center = new THREE.Mesh(
-        new THREE.SphereGeometry(0.12),
-        new THREE.MeshStandardMaterial({ color: 0xF7DC6F })
-    );
-    center.position.y = 0.45;
-    group.add(center);
+  // 6 petals
+  const petalGeo = new THREE.SphereGeometry(0.13, 10, 10);
+  const petalMat = new THREE.MeshStandardMaterial({ color: 0xff7abf });
+  const step = (Math.PI * 2) / 6;
 
-    for (let i = 0; i < 6; i++) {
-        const petal = new THREE.Mesh(
-            new THREE.SphereGeometry(0.13),
-            new THREE.MeshStandardMaterial({ color: 0xFF7ABF })
-        );
-
-        const angle = (i / 6) * Math.PI * 2;
-
-        petal.position.set(
-            Math.cos(angle) * 0.2,
-            0.45,
-            Math.sin(angle) * 0.2
-        );
-
-        group.add(petal);
-    }
-
-    group.position.set(x, 0, z);
-    return group;
+  for (let i = 0; i < 6; i++) {
+    const angle = i * step;
+    const petal = new THREE.Mesh(petalGeo, petalMat);
+    petal.position.set(x + Math.cos(angle) * 0.2, 0.45, z + Math.sin(angle) * 0.2);
+    scene.add(petal);
+  }
 }

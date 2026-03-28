@@ -1,2 +1,0 @@
-# Job-cartografia-social-interactiva
-
