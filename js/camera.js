@@ -33,6 +33,8 @@ export function createCamera(container) {
  * @param {{ value: number }} angleRef  - mutable object holding the current angle
  */
 export function orbitCamera(camera, angleRef) {
+  //angleRef.value = (3*Math.PI)/2;
+  //angleRef.value = (2*Math.PI);
   angleRef.value += 0.001;
   camera.position.x = DISTANCE * Math.cos(angleRef.value);
   camera.position.z = DISTANCE * Math.sin(angleRef.value);
