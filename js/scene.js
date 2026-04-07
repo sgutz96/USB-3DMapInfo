@@ -44,8 +44,8 @@ export function initScene(camera, container) {
 
   // Topic buildings
   topics.forEach((topic) => {
-    const cube = createTower(scene, topic);
-    clickableCubes.push(cube);
+    //const cube = createTower(scene, topic);
+    //clickableCubes.push(cube);
   });
 
 

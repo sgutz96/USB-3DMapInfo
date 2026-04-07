@@ -1,8 +1,3 @@
-// js/data/topicModels.js
-// Datos de los 10 modelos GLTF que se colocan en la escena.
-// Ajusta position, modelScale y rotation según necesites.
-// El bloque `fallback` define el cubo que aparece si el .glb falla al cargar.
-
 export const topicModels = [
   {
     id: 'modelo_01',
@@ -11,15 +6,11 @@ export const topicModels = [
     position: [-2, 0, -5],
     modelScale: [1.5, 1.5, 1.5],
     rotation: [0, Math.PI / 2, 0],
-    fallback: { scale: [2, 2, 2], color: 0x00cccc },
+    fallback: { scale: [2, 2, 2], color: 0x1A237E },
     callToAction: 'Biblioteca y centro del conocimiento',
-    text: 'El edificio Duns Scoto es uno de los espacios académicos más importantes de la Universidad de San Buenaventura. Alberga la biblioteca principal, zonas de estudio, salas de investigación y recursos digitales que apoyan el aprendizaje autónomo y colaborativo.',
+    text: 'El edificio Duns Scoto es uno de los espacios académicos más importantes de la Universidad de San Buenaventura. Alberga la biblioteca principal, zonas de estudio, salas de investigación y recursos digitales.',
     tags: ['Biblioteca', 'Estudio', 'Investigación'],
-    images: [
-      './Img/duns_scoto/1.jpg',
-      './Img/duns_scoto/2.jpg',
-      './Img/duns_scoto/3.jpg',
-    ],
+    images: ['./Img/duns_scoto/1.jpg','./Img/duns_scoto/2.jpg','./Img/duns_scoto/3.jpg'],
   },
 
   {
@@ -29,15 +20,11 @@ export const topicModels = [
     position: [-7, 0, -0.5],
     modelScale: [1.5, 1.5, 1.5],
     rotation: [0, Math.PI / 2, 0],
-    fallback: { scale: [2, 2, 2], color: 0x00cccc },
+    fallback: { scale: [2, 2, 2], color: 0x1A237E },
     callToAction: 'Espacio académico y administrativo',
-    text: 'El edificio Diego Barroso integra aulas, oficinas administrativas y espacios académicos donde se desarrollan actividades formativas y de gestión institucional dentro de la universidad.',
+    text: 'El edificio Diego Barroso integra aulas, oficinas administrativas y espacios académicos donde se desarrollan actividades formativas dentro de la universidad.',
     tags: ['Aulas', 'Administración', 'Académico'],
-    images: [
-      './Img/diego_barroso/1.jpg',
-      './Img/diego_barroso/2.jpg',
-      './Img/diego_barroso/3.jpg',
-    ],
+    images: ['./Img/diego_barroso/1.jpg','./Img/diego_barroso/2.jpg','./Img/diego_barroso/3.jpg'],
   },
 
   {
@@ -47,15 +34,11 @@ export const topicModels = [
     position: [-4.5, 0, 2],
     modelScale: [1.5, 1.5, 1.5],
     rotation: [0, Math.PI / 2, 0],
-    fallback: { scale: [2, 2, 2], color: 0x00cccc },
-    callToAction: 'Formación y desarrollo académico',
-    text: 'El edificio Pedro Simón está destinado a actividades académicas y formativas. Cuenta con aulas equipadas y espacios que favorecen el aprendizaje dinámico en diferentes disciplinas.',
+    fallback: { scale: [2, 2, 2], color: 0x1A237E },
+    callToAction: 'Formación académica',
+    text: 'El edificio Pedro Simón está destinado a actividades académicas y formativas, con aulas equipadas para diferentes áreas del conocimiento.',
     tags: ['Educación', 'Clases', 'Formación'],
-    images: [
-      './Img/pedro_simon/1.jpg',
-      './Img/pedro_simon/2.jpg',
-      './Img/pedro_simon/3.jpg',
-    ],
+    images: ['./Img/pedro_simon/1.jpg','./Img/pedro_simon/2.jpg','./Img/pedro_simon/3.jpg'],
   },
 
   {
@@ -65,14 +48,80 @@ export const topicModels = [
     position: [-3, 0, 4.5],
     modelScale: [1.5, 1.5, 1.5],
     rotation: [0, Math.PI / 2, 0],
-    fallback: { scale: [2, 2, 2], color: 0x00cccc },
-    callToAction: 'Espacio académico interdisciplinario',
-    text: 'El edificio Guillermo de Ockham alberga espacios académicos destinados a distintas áreas del conocimiento, promoviendo el pensamiento crítico, la investigación y la interdisciplinariedad.',
-    tags: ['Interdisciplinar', 'Pensamiento crítico', 'Academia'],
-    images: [
-      './Img/ockham/1.jpg',
-      './Img/ockham/2.jpg',
-      './Img/ockham/3.jpg',
-    ],
+    fallback: { scale: [2, 2, 2], color: 0x1A237E },
+    callToAction: 'Pensamiento e investigación',
+    text: 'El edificio Guillermo de Ockham promueve la investigación y el pensamiento crítico, albergando espacios académicos interdisciplinarios.',
+    tags: ['Investigación', 'Academia', 'Interdisciplinar'],
+    images: ['./Img/ockham/1.jpg','./Img/ockham/2.jpg','./Img/ockham/3.jpg'],
   },
+
+  {
+    id: 'modelo_05',
+    title: 'Polideportivo',
+    modelPath: './models/Poli.glb',
+    position: [6.5, 1.5, -3.5],
+    modelScale: [1.5, 1.5, 1.5],
+    rotation: [0, Math.PI / 2, 0],
+    fallback: { scale: [2, 2, 2], color: 0x1A237E },
+    callToAction: 'Actividad física y bienestar',
+    text: 'El polideportivo es un espacio dedicado al deporte, la recreación y el bienestar estudiantil. Aquí se realizan actividades físicas, entrenamientos y eventos deportivos.',
+    tags: ['Deporte', 'Salud', 'Bienestar'],
+    images: ['./Img/polideportivo/1.jpg','./Img/polideportivo/2.jpg','./Img/polideportivo/3.jpg'],
+  },
+
+  {
+    id: 'modelo_06',
+    title: 'Hangar',
+    modelPath: './models/Angar.glb',
+    position: [11.5, 1.5, -5],
+    modelScale: [1.5, 1.5, 1.5],
+    rotation: [0, Math.PI / 2, 0],
+    fallback: { scale: [2, 2, 2], color: 0x1A237E },
+    callToAction: 'Espacio práctico y experimental',
+    text: 'El hangar es un espacio destinado a prácticas académicas, proyectos y actividades experimentales, especialmente en áreas técnicas y de ingeniería.',
+    tags: ['Práctica', 'Ingeniería', 'Proyectos'],
+    images: ['./Img/hangar/1.jpg','./Img/hangar/2.jpg','./Img/hangar/3.jpg'],
+  },
+
+  {
+    id: 'modelo_07',
+    title: 'Comedor',
+    modelPath: './models/Comedor.glb',
+    position: [2, 1.5, -1],
+    modelScale: [1.5, 1.5, 1.5],
+    rotation: [0, Math.PI / 2, 0],
+    fallback: { scale: [2, 2, 2], color: 0x1A237E },
+    callToAction: 'Espacio de encuentro y alimentación',
+    text: 'El comedor universitario es un punto de encuentro para la comunidad estudiantil, donde se promueve la alimentación y la interacción social.',
+    tags: ['Comida', 'Social', 'Encuentro'],
+    images: ['./Img/comedor/1.jpg','./Img/comedor/2.jpg','./Img/comedor/3.jpg'],
+  },
+
+  {
+    id: 'modelo_08',
+    title: 'Kiosco',
+    modelPath: './models/Kiosco.glb',
+    position: [2, 1.5, 6],
+    modelScale: [1.5, 1.5, 1.5],
+    rotation: [0, Math.PI / 2, 0],
+    fallback: { scale: [2, 2, 2], color: 0x1A237E },
+    callToAction: 'Punto de descanso',
+    text: 'El kiosco es un espacio informal de descanso donde los estudiantes pueden relajarse, compartir y hacer pausas entre clases.',
+    tags: ['Descanso', 'Social', 'Espacio abierto'],
+    images: ['./Img/kiosco/1.jpg','./Img/kiosco/2.jpg','./Img/kiosco/3.jpg'],
+  },
+
+  {
+    id: 'modelo_09',
+    title: 'Iglesia',
+    modelPath: './models/Iglesia.glb',
+    position: [-9, 1.5, -2],
+    modelScale: [1.5, 1.5, 1.5],
+    rotation: [0, Math.PI / 2, 0],
+    fallback: { scale: [2, 2, 2], color: 0x1A237E },
+    callToAction: 'Espiritualidad y reflexión',
+    text: 'La iglesia es un espacio de recogimiento espiritual dentro del campus, donde se realizan celebraciones religiosas y momentos de reflexión.',
+    tags: ['Espiritualidad', 'Reflexión', 'Comunidad'],
+    images: ['./Img/iglesia/1.jpg','./Img/iglesia/2.jpg','./Img/iglesia/3.jpg'],
+  }
 ];
